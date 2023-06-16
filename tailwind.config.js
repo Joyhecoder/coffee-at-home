@@ -8,7 +8,12 @@ module.exports = {
     "./src/App.jsx"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        serif: ["Merriweather", "serif"],
+        cursive: ["Tilt Prism", "cursive"]
+      },
+    },
   },
   plugins: [],
 }
