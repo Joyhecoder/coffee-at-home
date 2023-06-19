@@ -1,8 +1,14 @@
 import React from 'react'
+import Header from './Header'
 
-const BaseLayout = () => {
+const BaseLayout = ({children}) => {
   return (
-    <div>BaseLayout</div>
+    <>
+      <Header />
+      {children}
+    
+    
+    </>
   )
 }
 
