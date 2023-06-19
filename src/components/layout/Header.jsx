@@ -35,12 +35,12 @@ export default function Header() {
     <header className="bg-white">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
+          <a href="/" className="-m-1.5 p-1.5 flex flex-wrap">
             <img className="h-20 w-auto rounded-full" src={logo} alt="logo" />
+            <span className="self-center ml-4 font-cursive text-xl">COFFEE AT HOME</span>
           </a>
         </div>
-        <div className="flex lg:hidden">
+        {/* <div className="flex lg:hidden">
           <button
             type="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
@@ -49,9 +49,9 @@ export default function Header() {
             <span className="sr-only">Open main menu</span>
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
-        </div>
+        </div> */}
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <Popover className="relative">
+          {/* <Popover className="relative">
             <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
               Product
               <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
@@ -100,16 +100,16 @@ export default function Header() {
                 </div>
               </Popover.Panel>
             </Transition>
-          </Popover>
+          </Popover> */}
 
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Features
+          <a href="/" className="text-lg font-serif leading-6 text-gray-900">
+            Home
           </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Marketplace
+          <a href="/recipe" className="text-lg font-serif leading-6 text-gray-900">
+            Recipe
           </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Company
+          <a href="/about" className="text-lg font-serif leading-6 text-gray-900">
+            HomeMade Coffee Tips
           </a>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
