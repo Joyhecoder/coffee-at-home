@@ -20,11 +20,15 @@ const persistConfig = {
   storage,
 }
 
+const persistedReducer = persistReducer(persistConfig, coffeeReducer)
+
 const store = configureStore({
   reducer: {
-    coffeeReducer
+    coffeeReducer: persistedReducer
   }
 })
+
+let persistor = persistStore(store)
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
