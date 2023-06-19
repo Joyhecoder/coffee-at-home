@@ -1,6 +1,28 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
+import axios from "axios";
+
 
 const App = () => {
+
+
+
+
+  useEffect(() => {
+    const fetchRecommendedCoffee = async () => {
+      try {
+        const response = await fetch('http://localhost:8000/api')
+        const data = await response.json()
+        console.log(data.api)
+      } catch (error) {
+        console.log(error)
+      }
+      
+
+    }
+   
+    fetchRecommendedCoffee()
+  }, [])
+  
   return (
     <>
     
