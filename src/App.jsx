@@ -19,6 +19,7 @@ const App = () => {
         const data = await response.json()
         let apiKey = data.api
 
+        // check to see if we need to fetch initial recommened data
         if(recommendedCoffeeRecipeData.length == 0){
           console.log("initial recommendedCoffeeRecipe is 0")
           // const exampleData = [{
@@ -771,7 +772,7 @@ const App = () => {
         }
      
         
-        // await dispatch(FETCH_RECOMMENDED(fetchCoffeeData.data.hits))
+       console.log(recommendedCoffeeRecipeData[0])
       } catch (error) {
         console.log(error)
       }
