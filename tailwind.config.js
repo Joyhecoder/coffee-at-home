@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./src/components/layout/BaseLayout.jsx",
@@ -13,6 +14,9 @@ module.exports = {
         serif: ["Merriweather", "serif"],
         cursive: ["Tilt Prism", "cursive"]
       },
+      color: {
+        pink: '#ffcdb2'
+      }
     },
   },
   plugins: [],
