@@ -1,16 +1,12 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, Fragment} from 'react'
 import axios from "axios";
 import { useDispatch, useSelector} from 'react-redux'
 import { fetch_recommended } from './components/reducers/exampleSlice';
 
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Typography,
-  Tooltip,
-} from "@material-tailwind/react";
+
+import { Menu, Transition } from '@headlessui/react'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
+
 
 
 const App = () => {
@@ -19,10 +15,6 @@ const App = () => {
   const recommendedCoffeeRecipeData = useSelector(state => state.coffeeReducer.recommendedList)
 //  const [recommendCoffee, setRecommendCoffee] = useState([])
 let coffeeDataFromRedux
-
-
-
-
 
   useEffect(() => {
     const fetchRecommendedCoffee = async () => {
@@ -50,6 +42,10 @@ let coffeeDataFromRedux
 
   coffeeDataFromRedux = useSelector(state => state.coffeeReducer.recommendedList[0])
   console.log(coffeeDataFromRedux)
+
+  const classNames = (...classes) => {
+    return classes.filter(Boolean).join(' ')
+  }
   return (
     <>
     
@@ -59,15 +55,26 @@ let coffeeDataFromRedux
     <h1 className="text-3xl font-cursive underline">
       Hello world!
     </h1> */}
+
+    {/* filter section */}
+    <div className="flex flex-wrap bg-[#f5ebe0] justify-center items-center ">
+
+
+
+    </div>
+    {/* end of filter section  */}
+
+  
+ {/* coffee display section */}
     <div className="flex flex-wrap bg-[#f5ebe0] justify-center items-center ">
     
-    {coffeeDataFromRedux.length !== 0 ? 
+    {coffeeDataFromRedux !== undefined ? 
     
   
     coffeeDataFromRedux.map(coffee => {
       return (
 
-          <div className="w-full max-w-sm bg-white rounded-lg m-2 bg-opacity-0 hover:scale-110 transition duration-300 ease-in-out">
+          <div className="w-full max-w-sm bg-white rounded-lg m-2 bg-opacity-0 hover:scale-110 transition duration-300 ease-in-out" id={coffee.recipe.healthLabels}>
               <a href="#">
               
                   <img className="p-8 rounded-full" src={coffee.recipe.images.REGULAR.url} alt="product image" />
@@ -91,12 +98,14 @@ let coffeeDataFromRedux
 
       )
     })
+    
    
     :
     <></>
   
   }
   </div>
+  {/* end of coffee display section */}
     
     </>
   )
