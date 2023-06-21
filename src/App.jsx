@@ -67,7 +67,7 @@ let coffeeDataFromRedux
     coffeeDataFromRedux.map(coffee => {
       return (
 
-          <div className="w-full max-w-sm bg-white rounded-lg m-2 bg-opacity-25">
+          <div className="w-full max-w-sm bg-white rounded-lg m-2 bg-opacity-0 hover:scale-110 transition duration-300 ease-in-out">
               <a href="#">
               
                   <img className="p-8 rounded-full" src={coffee.recipe.images.REGULAR.url} alt="product image" />
