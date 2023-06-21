@@ -9,6 +9,7 @@ import './index.css';
 import App from './App';
 import Recipe from './components/Recipe'
 import AboutHomeMade from './components/AboutHomeMade'
+import Details from './components/Details'
 import BaseLayout from './components/layout/BaseLayout'
 import coffeeReducer from './components/reducers/exampleSlice'
 
@@ -41,6 +42,7 @@ root.render(
           <Route path="/" element={ <App />} />
           <Route path="/recipe" element={ <Recipe />} />
           <Route path="/about" element={ <AboutHomeMade />} />
+          <Route path='/details' element={ <Details /> } />
         </Routes>
       </BaseLayout>
     </Router>
