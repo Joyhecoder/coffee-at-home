@@ -16,7 +16,8 @@ module.exports = {
       },
       color: {
         pink: '#ffcdb2'
-      }
+       
+      },
     },
   },
   plugins: [],
