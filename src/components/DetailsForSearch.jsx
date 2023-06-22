@@ -57,7 +57,7 @@ const DetailsForSearch = () => {
                 <br />
                 <div className='font-cursive text-3xl text-rose-200'>
                     
-                    Total time: {coffee.recipe.totalTime}
+                    Total time: {coffee.recipe.totalTime === 0 ? 'unknown' : coffee.recipe.totalTime} minutes
                 </div>
                 
 
@@ -81,9 +81,9 @@ const DetailsForSearch = () => {
                     {coffee.recipe.label} is a good choice for people who want a {coffee.recipe.dietLabels.map(label => <em>{label}, </em>)} yummy coffee. 
                     
                     It is a good company for {coffee.recipe.mealType.map(meal=> <span>{meal}</span>)} type of meal. {coffee.recipe.label} can serve as a {coffee.recipe.dishType.map(dish => <span>{dish}</span>)} dish of your meal. There are lots of nutrients in 1 serving of the coffee, such as &nbsp;
-                    {coffee.recipe.totalNutrients.CA.quantity}&nbsp;  {coffee.recipe.totalNutrients.CA.unit}&nbsp;{coffee.recipe.totalNutrients.CA.label},   {coffee.recipe.totalNutrients.VITC.quantity}&nbsp;  {coffee.recipe.totalNutrients.VITC.unit}&nbsp; {coffee.recipe.totalNutrients.VITC.label}. Sugar and fat are also in this drink so you want to watch how much you have {coffee.recipe.label} per day too! Sugar level for {coffee.recipe.label} is &nbsp;
-                    {coffee.recipe.totalNutrients.SUGAR.quantity}&nbsp;  {coffee.recipe.totalNutrients.SUGAR.unit}&nbsp;{coffee.recipe.totalNutrients.SUGAR.label}, and fat level is &nbsp;
-                    {coffee.recipe.totalNutrients.FAT.quantity}&nbsp;  {coffee.recipe.totalNutrients.FAT.unit}&nbsp;{coffee.recipe.totalNutrients.FAT.label}. 
+                    {coffee.recipe.totalNutrients.CA.quantity.toFixed(2)}&nbsp;  {coffee.recipe.totalNutrients.CA.unit}&nbsp;{coffee.recipe.totalNutrients.CA.label},   {coffee.recipe.totalNutrients.VITC.quantity.toFixed(2)}&nbsp;  {coffee.recipe.totalNutrients.VITC.unit}&nbsp; {coffee.recipe.totalNutrients.VITC.label}. Sugar and fat are also in this drink so you want to watch how much you have {coffee.recipe.label} per day too! Sugar level for {coffee.recipe.label} is &nbsp;
+                    {coffee.recipe.totalNutrients.SUGAR.quantity.toFixed(2)}&nbsp;  {coffee.recipe.totalNutrients.SUGAR.unit}&nbsp;{coffee.recipe.totalNutrients.SUGAR.label}, and fat level is &nbsp;
+                    {coffee.recipe.totalNutrients.FAT.quantity.toFixed(2)}&nbsp;  {coffee.recipe.totalNutrients.FAT.unit}&nbsp;{coffee.recipe.totalNutrients.FAT.label}. 
                 </div>
 
             </div>
