@@ -1,4 +1,4 @@
-import React, {useState, useEffect, Fragment} from 'react'
+import React, {useEffect} from 'react'
 import axios from "axios";
 import { useDispatch, useSelector} from 'react-redux'
 import { fetch_recommended } from './components/reducers/exampleSlice';
@@ -14,6 +14,11 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid'
 const App = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
+
+  //change the window tab title to the page name
+  useEffect(() => {
+    document.title ="Home Page"
+  }, [])
   
   const recommendedCoffeeRecipeData = useSelector(state => state.coffeeReducer.recommendedList)
 //  const [recommendCoffee, setRecommendCoffee] = useState([])
