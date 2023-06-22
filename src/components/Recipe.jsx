@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { useDispatch, useSelector} from 'react-redux'
 import { search_coffee, update_search_name } from './reducers/exampleSlice';
 import axios from "axios";
@@ -8,8 +8,10 @@ import { useNavigate } from "react-router-dom";
 const Recipe = () => {
   const searchedCoffee = useSelector(state => state.coffeeReducer.search)
   const searchedCoffeeName = useSelector(state => state.coffeeReducer.searchedName)
-  console.log(searchedCoffeeName)
-  console.log(searchedCoffee)
+  //change the window tab title to the page name
+  useEffect(() => {
+    document.title ="Recipe"
+  }, [])
 
   const [coffee, setCoffee] = useState('')
   const dispatch = useDispatch()

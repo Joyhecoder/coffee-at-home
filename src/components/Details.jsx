@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector} from 'react-redux'
 
@@ -10,7 +10,10 @@ const Details = () => {
     const coffeeFromRedux = useSelector(state => state.coffeeReducer.recommendedList)[0]
     const chosenCoffee = coffeeFromRedux.filter(coffee => coffee.recipe.id === id)
     const coffee = chosenCoffee[0]
-    console.log(coffee)
+     //change the window tab title to the page name
+     useEffect(() => {
+        document.title ="HomeMade Coffee"
+      }, [])
   return (
     <div className="h-screen">
         <div className='bg-[#31572c] flex flex-wrap-reverse justify-center items-center py-2 h-1/2'>
