@@ -12,8 +12,8 @@ const Details = () => {
     const coffee = chosenCoffee[0]
     console.log(coffee)
   return (
-    <>
-        <div className='bg-[#31572c] flex flex-wrap-reverse justify-center items-center py-2'>
+    <div className="h-screen">
+        <div className='bg-[#31572c] flex flex-wrap-reverse justify-center items-center py-2 h-1/2'>
             
             {/* content section */}
             <div className='mx-8 w-1/2'>
@@ -69,12 +69,17 @@ const Details = () => {
 
         </div>
 
-        <div className="bg-[#f5ebe0] flex h-64 ">
-            <div className="m-auto">
+        <div className="bg-[#f5ebe0] flex h-1/2">
+            <div className="m-auto flex flex-col items-center">
                 <div className="font-serif font-3xl text-lime-700 font-bold flex items-center justify-center">MORE ABOUT THIS COFFEE</div>
                 <br />
-                <div className='text-lime-900 font-serif '>
+                <div className='text-lime-900 font-serif w-5/6 '>
                     {coffee.recipe.label} is a good choice for people who want a {coffee.recipe.dietLabels.map(label => <em>{label}, </em>)} yummy coffee. 
+                    
+                    It is a good company for {coffee.recipe.mealType.map(meal=> <span>{meal}</span>)} type of meal. {coffee.recipe.label} can serve as a {coffee.recipe.dishType.map(dish => <span>{dish}</span>)} dish of your meal. There are lots of nutrients in 1 serving of the coffee, such as &nbsp;
+                    {coffee.recipe.totalNutrients.CA.quantity}&nbsp;  {coffee.recipe.totalNutrients.CA.unit}&nbsp;{coffee.recipe.totalNutrients.CA.label},   {coffee.recipe.totalNutrients.VITC.quantity}&nbsp;  {coffee.recipe.totalNutrients.VITC.unit}&nbsp; {coffee.recipe.totalNutrients.VITC.label}. Sugar and fat are also in this drink so you want to watch how much you have {coffee.recipe.label} per day too! Sugar level for {coffee.recipe.label} is &nbsp;
+                    {coffee.recipe.totalNutrients.SUGAR.quantity}&nbsp;  {coffee.recipe.totalNutrients.SUGAR.unit}&nbsp;{coffee.recipe.totalNutrients.SUGAR.label}, and fat level is &nbsp;
+                    {coffee.recipe.totalNutrients.FAT.quantity}&nbsp;  {coffee.recipe.totalNutrients.FAT.unit}&nbsp;{coffee.recipe.totalNutrients.FAT.label}. 
                 </div>
 
             </div>
@@ -83,7 +88,7 @@ const Details = () => {
     
     
     
-    </>
+    </div>
   )
 }
 
