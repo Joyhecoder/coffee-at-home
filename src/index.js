@@ -12,6 +12,7 @@ import AboutHomeMade from './components/AboutHomeMade'
 import Details from './components/Details'
 import BaseLayout from './components/layout/BaseLayout'
 import coffeeReducer from './components/reducers/exampleSlice'
+import DetailsForSearch from './components/DetailsForSearch';
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -43,6 +44,7 @@ root.render(
           <Route path="/recipe" element={ <Recipe />} />
           <Route path="/about" element={ <AboutHomeMade />} />
           <Route path='/details' element={ <Details /> } />
+          <Route path='/searchDetails' element={ <DetailsForSearch /> } />
         </Routes>
       </BaseLayout>
     </Router>

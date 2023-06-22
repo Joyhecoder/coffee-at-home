@@ -8,7 +8,9 @@ import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
 
 //3. define an inital state
 const initialState = {
-    recommendedList: []
+    recommendedList: [],
+    search: {},
+    searchedName: ''
 }
 
 
@@ -25,11 +27,23 @@ export const coffeeSlice = createSlice({
             state.recommendedList = [...state.recommendedList, action.payload]
           
 
+        },
+        search_coffee: (state, action) =>{
+            //in header.jsx coffee name and data are passed as an array
+            let coffeeName = action.payload[0]
+            let coffeeData = action.payload[1]
+            state.search[coffeeName] = coffeeData
+         
+          
+            
+        },
+        update_search_name: (state, action) => {
+            state.searchedName = action.payload
         }
     }
 })
 
-export const {fetch_recommended} = coffeeSlice.actions //create the actions for us from the reducers
+export const {fetch_recommended, search_coffee, update_search_name} = coffeeSlice.actions //create the actions for us from the reducers
 export default coffeeSlice.reducer;
 
 

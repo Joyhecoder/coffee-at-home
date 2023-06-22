@@ -2,16 +2,20 @@ import React from 'react'
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector} from 'react-redux'
 
-const Details = () => {
+const DetailsForSearch = () => {
     //get id from the prop
     const location = useLocation()
     const id = location.state
+    console.log(id)
     //get all the recommended coffee from redux and filter to find the one that was clicked
-    const coffeeFromRedux = useSelector(state => state.coffeeReducer.recommendedList)[0]
+    const searchedCoffeName = useSelector(state => state.coffeeReducer.searchedName)
+    const coffeeFromRedux = useSelector(state => state.coffeeReducer.search[searchedCoffeName])
     const chosenCoffee = coffeeFromRedux.filter(coffee => coffee.recipe.id === id)
+    
     const coffee = chosenCoffee[0]
     console.log(coffee)
   return (
+    
     <div className="h-screen">
         <div className='bg-[#31572c] flex flex-wrap-reverse justify-center items-center py-2 h-1/2'>
             
@@ -92,4 +96,4 @@ const Details = () => {
   )
 }
 
-export default Details
+export default DetailsForSearch
