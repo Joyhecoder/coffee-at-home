@@ -96,7 +96,7 @@ const Recipe = () => {
             </p>
             <br />
             <p className='font-serif text-lg'>
-             There are servral compkelling reasons why individuals should consider making coffee at home. First and foremost, brewing coffee at home allows for complete control over the entire coffee-making process. From selecting the type of coffee beans to determining the strength and flavor profile, individuals have the freedom to experiment and tailor their coffee to their exact preferences. This level of customization ensures a truly personalized and satisfying coffee experience. 
+             There are serveral compelling reasons why individuals should consider making coffee at home. First and foremost, brewing coffee at home allows for complete control over the entire coffee-making process. From selecting the type of coffee beans to determining the strength and flavor profile, individuals have the freedom to experiment and tailor their coffee to their exact preferences. This level of customization ensures a truly personalized and satisfying coffee experience. 
             </p>
             <br />
             <p className='font-serif text-lg'>

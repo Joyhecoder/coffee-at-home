@@ -16,7 +16,7 @@ const Details = () => {
       }, [])
   return (
     <div className="h-screen">
-        <div className='bg-[#31572c] flex flex-wrap-reverse justify-center items-center py-2 h-1/2'>
+        <div className='bg-[#31572c] flex flex-wrap-reverse justify-center items-center py-2 h-2/3'>
             
             {/* content section */}
             <div className='mx-8 w-1/2'>
@@ -72,9 +72,9 @@ const Details = () => {
 
         </div>
 
-        <div className="bg-[#f5ebe0] flex h-1/2">
+        <div className="bg-[#f5ebe0] flex h-1/3">
             <div className="m-auto flex flex-col items-center">
-                <div className="font-serif font-3xl text-lime-700 font-bold flex items-center justify-center">MORE ABOUT THIS COFFEE</div>
+                <div className="font-serif font-3xl text-lime-700 font-bold flex items-center justify-center">MORE ABOUT THIS RECIPE</div>
                 <br />
                 <div className='text-lime-900 font-serif w-5/6 '>
                     {coffee.recipe.label} is a good choice for people who want a {coffee.recipe.dietLabels.map(label => <em>{label}, </em>)} yummy coffee. 
