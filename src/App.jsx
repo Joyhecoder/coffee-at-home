@@ -44,25 +44,21 @@ const App = () => {
   }, [])
 
   
+  //clear redux state after 5 min
   const resetState = () => {
     dispatch(reset_state())
   }
-
   useEffect(() => {
     const delay = 300000 //5 min
-  
-
     const timer = setTimeout(() => {
       resetState()
     }, delay)
-  
     return () => {
       clearTimeout(timer)
     }
   }, [])
   
   
-
   coffeeDataFromRedux = useSelector(state => state.coffeeReducer.recommendedList[0])
   console.log(coffeeDataFromRedux)
 
