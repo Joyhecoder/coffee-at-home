@@ -16,18 +16,6 @@ import {
 import {  PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import logo from '../assets/img/logo.JPG'
 
-const products = [
-  { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-  { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-  { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-  { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-  { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
-]
-const callsToAction = [
-  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-  { name: 'Contact sales', href: '#', icon: PhoneIcon },
-]
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
@@ -98,9 +86,9 @@ export default function Header() {
           <a href="/recipe" className="text-lg font-serif leading-6 text-gray-900">
             Recipe
           </a>
-          <a href="/about" className="text-lg font-serif leading-6 text-gray-900">
+          {/* <a href="/about" className="text-lg font-serif leading-6 text-gray-900">
             HomeMade Coffee Tips
-          </a>
+          </a> */}
         </Popover.Group>
         {/* search bar section */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -154,18 +142,18 @@ export default function Header() {
                 >
                   Recipe
                 </a>
-                <a
+                {/* <a
                   href="/about"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-serif leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   HomeMade Coffee Tips
-                </a>
+                </a> */}
               </div>
               {/* search bar section */}
               <div className="py-6">
                 <div className="pt-2 relative mx-auto text-gray-600">
                   <input className="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
-                    type="search" name="search" placeholder="Search" />
+                    type="search" name="search" placeholder="Search" onChange={e=>setCoffee(e.target.value)} />
                   <button type="submit" className="absolute right-4 top-0 mt-5 ml-3" onClick={handleSearch}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none"  viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="text-gray-600 h-4 w-4">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"  />

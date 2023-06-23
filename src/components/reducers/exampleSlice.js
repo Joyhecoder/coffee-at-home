@@ -39,11 +39,17 @@ export const coffeeSlice = createSlice({
         },
         update_search_name: (state, action) => {
             state.searchedName = action.payload
+        },
+        reset_state: (state) => {
+            console.log("inside reset")
+            state.recommendedList = []
+            state.search = {}
+            state.searchedName = ''
         }
     }
 })
 
-export const {fetch_recommended, search_coffee, update_search_name} = coffeeSlice.actions //create the actions for us from the reducers
+export const {fetch_recommended, search_coffee, update_search_name, reset_state} = coffeeSlice.actions //create the actions for us from the reducers
 export default coffeeSlice.reducer;
 
 
